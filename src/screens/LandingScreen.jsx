@@ -33,13 +33,13 @@ const HERO_STEPS = [
 export function LandingScreen({ onCreate }) {
   return (
     <div>
-      <section className="relative overflow-hidden border-b border-white/[0.06]">
+      <section className="relative overflow-hidden border-b border-ink/[0.06]">
         <div className="pointer-events-none absolute inset-0 grid-fade opacity-60" />
         <div className="pointer-events-none absolute -right-40 top-0 h-[420px] w-[420px] rounded-full bg-amber-400/[0.03] blur-3xl" />
 
         <div className="container-page relative grid gap-14 py-16 xl:grid-cols-[1.03fr_0.97fr] xl:items-center xl:py-24">
           <div className="min-w-0 max-w-2xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.025] px-3 py-1.5">
+            <div className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-ink/[0.025] px-3 py-1.5">
               <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
               <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-steel-400">
                 Сервис для цехов металлообработки
@@ -63,7 +63,7 @@ export function LandingScreen({ onCreate }) {
               </Button>
               <a
                 href="#cases"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-xl px-5 text-sm text-steel-300 transition-colors duration-200 hover:bg-white/[0.04] hover:text-steel-100"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-xl px-5 text-sm text-steel-300 transition-colors duration-200 hover:bg-ink/[0.04] hover:text-steel-100"
               >
                 Смотреть кейсы
                 <ChevronRight className="h-4 w-4" strokeWidth={1.8} />
@@ -94,7 +94,7 @@ export function LandingScreen({ onCreate }) {
                 {HERO_STEPS.map((step, index) => (
                   <div
                     key={step.title}
-                    className="rounded-xl border border-white/[0.08] bg-white/[0.025] p-4"
+                    className="rounded-xl border border-ink/[0.08] bg-ink/[0.025] p-4"
                   >
                     <div className="flex items-center justify-between gap-2">
                       <span className="mono text-[13px] font-medium text-amber-300">
@@ -122,7 +122,7 @@ export function LandingScreen({ onCreate }) {
         </div>
       </section>
 
-      <section id="cases" className="scroll-mt-24 border-b border-white/[0.06] py-20 lg:py-24">
+      <section id="cases" className="scroll-mt-24 border-b border-ink/[0.06] py-20 lg:py-24">
         <div className="container-page">
           <SectionHeading
             eyebrow="Кейсы / примеры внедрений"
@@ -142,17 +142,17 @@ export function LandingScreen({ onCreate }) {
               return (
                 <article
                   key={item.id}
-                  className="panel group flex h-full flex-col p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-amber-400/20 hover:bg-graphite-850/90"
+                  className="panel group flex h-full flex-col p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-product-plateLineHover hover:shadow-plateHover"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div className="flex items-center gap-2">
                       <span className="mono text-[10px] text-steel-600">{item.index}</span>
-                      <span className="h-px w-4 bg-white/10" />
+                      <span className="h-px w-4 bg-product-plateLine" />
                       <span className="text-[10px] uppercase tracking-[0.13em] text-steel-500">
                         {item.tag}
                       </span>
                     </div>
-                    <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg border border-white/[0.08] bg-white/[0.02] text-steel-400 transition-colors group-hover:text-amber-300">
+                    <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg border border-product-plateLine/80 bg-white/70 text-steel-400 transition-colors group-hover:text-amber-300">
                       <Icon className="h-4 w-4" strokeWidth={1.6} />
                     </span>
                   </div>
@@ -162,7 +162,7 @@ export function LandingScreen({ onCreate }) {
                   </h3>
                   <p className="mt-2 text-xs leading-relaxed text-steel-500">{item.description}</p>
 
-                  <div className="mt-5 grid grid-cols-3 gap-2 border-t border-white/[0.06] pt-4">
+                  <div className="mt-5 grid grid-cols-3 gap-2 border-t border-product-plateLine/70 pt-4">
                     {item.stats.map((stat) => (
                       <div key={stat.label}>
                         <div className="text-[9px] uppercase tracking-[0.12em] text-steel-600">
@@ -173,7 +173,7 @@ export function LandingScreen({ onCreate }) {
                     ))}
                   </div>
 
-                  <div className="mt-5 flex items-end justify-between gap-3 border-t border-white/[0.06] pt-4">
+                  <div className="mt-5 flex items-end justify-between gap-3 border-t border-product-plateLine/70 pt-4">
                     <div>
                       <div className="text-[15px] font-medium text-amber-300">{item.effect}</div>
                       <div className="mt-0.5 text-[10px] text-steel-600">{item.effectNote}</div>
@@ -194,12 +194,12 @@ export function LandingScreen({ onCreate }) {
         <div className="container-page">
           <SectionHeading
             eyebrow="Производственные предприятия"
-            title="С кем мы уже работаем"
-            description="Типовые профили заказчиков: от небольших механических участков до серийных производств с парком более сотни станков."
+            title="С кем мы можем работать"
+            description="Предприятия металлообработки, машиностроения и ремонта оборудования, для которых подходит цифровой двойник участка."
             action={
               <span className="hidden items-center gap-2 text-[10px] uppercase tracking-[0.18em] text-steel-600 sm:flex">
                 <span className="h-1.5 w-1.5 rounded-full bg-steel-600" />
-                6 профилей
+                6 предприятий
               </span>
             }
           />
@@ -208,25 +208,34 @@ export function LandingScreen({ onCreate }) {
             {partners.map((partner) => (
               <article
                 key={partner.name}
-                className="panel-soft flex items-start gap-4 p-4 transition-colors duration-200 hover:border-white/[0.12] hover:bg-white/[0.025]"
+                className="panel-soft flex items-start gap-4 p-4 transition-colors duration-200 hover:border-product-plateLineHover"
               >
-                <div className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-white/[0.08] bg-graphite-900/80 font-mono text-[10px] tracking-[0.08em] text-steel-300">
-                  {partner.monogram}
+                <div className="flex h-14 w-[74px] shrink-0 items-center justify-center border border-product-plateLine/80 bg-white px-2 py-1.5">
+                  <img
+                    src={partner.logo}
+                    alt=""
+                    loading="lazy"
+                    className="max-h-full max-w-full object-contain"
+                  />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <h3 className="truncate text-[13px] font-medium text-steel-100">{partner.name}</h3>
-                  <p className="mt-1 flex items-center gap-1.5 text-[10px] text-steel-500">
-                    <MapPin className="h-3 w-3" strokeWidth={1.6} />
-                    {partner.city} · {partner.industry}
+                  <h3 className="text-[13px] font-medium leading-snug text-steel-100">{partner.name}</h3>
+                  <p className="mt-1 flex items-start gap-1.5 text-[10px] leading-relaxed text-steel-500">
+                    {partner.city ? (
+                      <MapPin className="mt-0.5 h-3 w-3 shrink-0" strokeWidth={1.6} />
+                    ) : null}
+                    <span>
+                      {partner.city ? `${partner.city} · ` : ''}
+                      {partner.industry}
+                    </span>
                   </p>
-                  <p className="mt-2 font-mono text-[10px] text-steel-600">{partner.fleet}</p>
                 </div>
               </article>
             ))}
           </div>
 
           <p className="mt-5 text-[10px] text-steel-600">
-            Названия и профили предприятий вымышлены и используются для демонстрации интерфейса.
+            Демонстрационный список предприятий для показа интерфейса.
           </p>
         </div>
       </section>
@@ -277,7 +286,7 @@ function HeroPreview() {
 
       <div className="relative">
         <div className="pointer-events-none absolute -inset-5 rounded-[28px] bg-product-accent/[0.07] blur-2xl" />
-        <div className="relative overflow-hidden rounded-2xl border border-product-line bg-product-surface shadow-[0_45px_100px_-40px_rgba(0,0,0,0.9)]">
+        <div className="relative overflow-hidden rounded-2xl border border-product-line bg-product-bg shadow-[0_40px_90px_-40px_rgba(11,27,51,0.28)]">
           <div className="flex items-center justify-between gap-2 border-b border-product-line bg-product-soft px-4 py-3">
             <div className="flex items-center gap-2">
               <TwinMark className="h-7 w-7" />
@@ -372,13 +381,13 @@ function HeroPreview() {
               <svg viewBox="0 0 360 52" className="mt-2 h-12 w-full" preserveAspectRatio="none" aria-hidden="true">
                 <defs>
                   <linearGradient id="twin-hero-area" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#7ef0a2" stopOpacity="0.15" />
-                    <stop offset="100%" stopColor="#7ef0a2" stopOpacity="0" />
+                    <stop offset="0%" stopColor="#0c77e2" stopOpacity="0.14" />
+                    <stop offset="100%" stopColor="#0c77e2" stopOpacity="0" />
                   </linearGradient>
                 </defs>
-                <line x1="0" y1="14" x2="360" y2="14" stroke="rgba(232,238,246,0.10)" strokeWidth="1" strokeDasharray="2 3" />
-                <line x1="0" y1="28" x2="360" y2="28" stroke="rgba(232,238,246,0.10)" strokeWidth="1" strokeDasharray="2 3" />
-                <line x1="0" y1="42" x2="360" y2="42" stroke="rgba(232,238,246,0.10)" strokeWidth="1" strokeDasharray="2 3" />
+                <line x1="0" y1="14" x2="360" y2="14" stroke="#e3eaf3" strokeWidth="1" strokeDasharray="2 3" />
+                <line x1="0" y1="28" x2="360" y2="28" stroke="#e3eaf3" strokeWidth="1" strokeDasharray="2 3" />
+                <line x1="0" y1="42" x2="360" y2="42" stroke="#e3eaf3" strokeWidth="1" strokeDasharray="2 3" />
                 <path
                   d="M0 36 C20 32 38 38 58 33 S92 37 112 29 S150 33 172 27 S204 34 228 23 S262 29 286 21 S320 27 342 23 S354 25 360 24 L360 52 L0 52 Z"
                   fill="url(#twin-hero-area)"
@@ -386,14 +395,14 @@ function HeroPreview() {
                 <path
                   d="M0 36 C20 32 38 38 58 33 S92 37 112 29 S150 33 172 27 S204 34 228 23 S262 29 286 21 S320 27 342 23 S354 25 360 24"
                   fill="none"
-                  stroke="#7ef0a2"
+                  stroke="#0c77e2"
                   strokeWidth="1.6"
                   strokeLinecap="round"
                 />
                 <path
                   d="M0 44 C24 42 40 46 60 42 S96 44 118 40 S150 43 174 39 S206 44 230 38 S264 41 288 36 S322 39 344 37 S354 38 360 37"
                   fill="none"
-                  stroke="#fbbf24"
+                  stroke="#b45309"
                   strokeWidth="1.2"
                   strokeDasharray="3 3"
                   opacity="0.7"
@@ -434,7 +443,7 @@ function HeroPreview() {
         </div>
       </div>
 
-      <div className="absolute -bottom-4 right-2 hidden items-center gap-2 rounded-lg border border-product-line bg-product-surface px-3 py-2 shadow-[0_20px_40px_-24px_rgba(0,0,0,0.7)] sm:flex">
+      <div className="absolute -bottom-4 right-2 hidden items-center gap-2 rounded-lg border border-product-line bg-product-surface px-3 py-2 shadow-[0_20px_40px_-24px_rgba(11,27,51,0.25)] sm:flex">
         <Sparkles className="h-3.5 w-3.5 text-product-accent" strokeWidth={1.6} />
         <span className="text-[10px] text-product-dim">Собрано из ведомости</span>
         <span className="grid h-4 w-4 place-items-center rounded-full bg-product-green-soft text-product-green">

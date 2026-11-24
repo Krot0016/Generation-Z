@@ -1,7 +1,7 @@
 export function TwinMark({ className = 'h-9 w-9' }) {
   return (
     <span
-      className={`grid ${className} shrink-0 place-items-center rounded-lg border border-product-accent/30 bg-product-accent/10 text-product-accent shadow-[inset_0_0_18px_rgba(126,240,162,0.08)]`}
+      className={`grid ${className} shrink-0 place-items-center rounded-lg border border-product-accent/30 bg-product-accent/10 text-product-accent shadow-[inset_0_0_18px_rgba(12,119,226,0.06)]`}
       aria-hidden="true"
     >
       <svg

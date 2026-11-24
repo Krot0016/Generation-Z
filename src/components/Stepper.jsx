@@ -21,7 +21,7 @@ export function Stepper({ current }) {
                 'grid h-6 w-6 shrink-0 place-items-center rounded-full border font-mono text-[10px]',
                 done && 'border-amber-400/35 bg-amber-400/10 text-amber-300',
                 active && 'border-amber-400/60 bg-amber-400 text-graphite-950',
-                !done && !active && 'border-white/10 text-steel-600',
+                !done && !active && 'border-ink/10 text-steel-600',
               )}
             >
               {done ? <Check className="h-3 w-3" strokeWidth={2.4} /> : step.id}
@@ -40,7 +40,7 @@ export function Stepper({ current }) {
               <span
                 className={cn(
                   'hidden h-px w-5 sm:block',
-                  done ? 'bg-amber-400/25' : 'bg-white/10',
+                  done ? 'bg-amber-400/25' : 'bg-ink/10',
                 )}
               />
             )}

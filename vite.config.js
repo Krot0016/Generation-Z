@@ -1,9 +1,9 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// base: './' — относительные пути к ассетам.
-// Благодаря этому сайт работает в ЛЮБОМ репозитории GitHub Pages
-// (https://user.github.io/любое-имя/), имя репозитория менять не нужно.
+// Относительный base позволяет открывать сборку и с GitHub Pages
+// (https://<user>.github.io/<repo>/), и с собственного домена
+// без правки конфига под имя репозитория.
 export default defineConfig({
   base: './',
   plugins: [react()],

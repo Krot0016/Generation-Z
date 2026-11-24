@@ -13,8 +13,10 @@
 
 ## Запуск
 
+Нужен Node.js 18+ и npm.
+
 ```bash
-cd twinboost
+cd "Generation-Z"
 npm install
 npm run dev
 ```
@@ -58,6 +60,10 @@ index.html
 vite.config.js
 tailwind.config.js
 postcss.config.js
+.github/workflows/deploy.yml   // CI: сборка и публикация на GitHub Pages
+public/
+  .nojekyll
+  logos/                       // логотипы партнёров
 src/
   main.jsx
   App.jsx              // сценарий, состояние, тосты
@@ -84,6 +90,24 @@ src/
     ResultScreen.jsx
 ```
 
+## Деплой на GitHub Pages
+
+Сайт живёт в репозитории
+[Krot0016/Generation-Z](https://github.com/Krot0016/Generation-Z) и
+публикуется на [krot0016.github.io/Generation-Z](https://krot0016.github.io/Generation-Z/).
+
+Сборка использует относительный `base`, а деплой выполняет GitHub Actions
+(`.github/workflows/deploy.yml`):
+
+1. В репозитории **Settings → Pages → Build and deployment** должен быть
+   выбран **Source: GitHub Actions**.
+2. Любой пуш в `main` запускает сборку и публикацию.
+3. Готовый сайт: `https://krot0016.github.io/Generation-Z/`.
+
+Обновление сайта — обычный `git push` в `main`. Папка `dist`
+в репозиторий не коммитится: её собирает CI на каждый деплой.
+Менять `base` под имя репозитория не нужно.
+
 ## Важно
 
 - Файл **не читается** и не отправляется на сервер. Для любого файла
@@ -92,16 +116,3 @@ src/
 - Все предприятия, показатели и кейсы вымышлены.
 - Живые значения имитируются случайным блужданием вокруг базовых
   профилей станков на клиенте.
-
-## Деплой на GitHub Pages
-
-1. Создайте публичный репозиторий (без README и без .gitignore).
-2. Откройте папку `github-upload` и перетащите **всё её содержимое** в раздел
-   *Add file → Upload files* нового репозитория (включая `.github` и `.gitignore`,
-   для этого в Проводнике включите «Показать скрытые элементы»).
-3. Settings → Pages → Source: **GitHub Actions**.
-4. Actions → workflow `Deploy website` → при необходимости **Re-run all jobs**.
-
-Сайт будет доступен по адресу `https://<логин>.github.io/<имя-репозитория>/`.
-`base: './'` в `vite.config.js` делает пути относительными, поэтому имя
-репозитория может быть любым.

@@ -67,7 +67,7 @@ export function ResultScreen({ stations, onBackToBuilder }) {
       <div className="pb-16">
         <FlowBar current={3} note="Демо-режим · TwinBoost" />
         <div className="container-page pt-6">
-          <div className="rounded-2xl border border-product-line bg-product-surface p-8 text-center shadow-[0_40px_100px_-50px_rgba(0,0,0,0.95)]">
+          <div className="rounded-2xl border border-product-line bg-product-surface p-8 text-center shadow-[0_36px_90px_-50px_rgba(11,27,51,0.3)]">
             <TwinMark className="mx-auto h-10 w-10" />
             <h1 className="mt-4 text-xl font-semibold text-product-ink">Конфигурация пуста</h1>
             <p className="mx-auto mt-2 max-w-md text-sm text-product-dim">
@@ -95,7 +95,7 @@ export function ResultScreen({ stations, onBackToBuilder }) {
       <FlowBar current={3} note="Демо-режим · TwinBoost" />
 
       <div className="container-page pt-6">
-        <div className="overflow-hidden rounded-[22px] border border-white/[0.09] bg-product-bg shadow-[0_50px_120px_-50px_rgba(0,0,0,0.95)]">
+        <div className="overflow-hidden rounded-[22px] border border-ink/[0.09] bg-product-bg shadow-[0_45px_110px_-55px_rgba(11,27,51,0.35)]">
           <div className="border-b border-product-line bg-product-surface">
             <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6">
               <div className="flex items-center gap-2.5">
@@ -120,7 +120,7 @@ export function ResultScreen({ stations, onBackToBuilder }) {
               </div>
             </div>
             <div className="flex gap-2 overflow-x-auto px-4 pb-2.5 sm:px-6">
-              <span className="rounded-md bg-product-accent px-2.5 py-1 text-[9px] font-semibold text-product-bg">
+              <span className="rounded-md bg-product-accent px-2.5 py-1 text-[9px] font-semibold text-white">
                 Мониторинг
               </span>
               <span className="px-1 py-1 text-[9px] text-product-mute">Аналитика</span>
@@ -207,7 +207,7 @@ export function ResultScreen({ stations, onBackToBuilder }) {
                       index={index}
                       metrics={metrics[station.instanceId] || station.baseline}
                     />
-                    {index < stations.length - 1 && <ChainArrow tone="green" />}
+                    {index < stations.length - 1 && <ChainArrow />}
                   </Fragment>
                 ))}
               </div>

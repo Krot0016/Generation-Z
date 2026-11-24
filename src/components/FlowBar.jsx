@@ -2,7 +2,7 @@ import { Stepper } from './Stepper';
 
 export function FlowBar({ current, note }) {
   return (
-    <div className="border-b border-white/[0.06] bg-graphite-950/45">
+    <div className="border-b border-ink/[0.06] bg-graphite-950/45">
       <div className="container-page flex items-center justify-between gap-4 py-3">
         <Stepper current={current} />
         {note && (

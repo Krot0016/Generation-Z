@@ -10,7 +10,7 @@ const NAV_LINKS = [
 
 export function Header({ landing, onHome, onCreate }) {
   return (
-    <header className="sticky top-0 z-40 border-b border-white/[0.06] bg-graphite-950/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-40 border-b border-ink/[0.06] bg-graphite-950/80 shadow-[0_10px_30px_-26px_rgba(11,27,51,0.33)] backdrop-blur-xl">
       <div className="container-page flex h-16 items-center justify-between gap-4">
         <Logo onClick={onHome} />
 

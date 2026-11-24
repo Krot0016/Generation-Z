@@ -88,7 +88,7 @@ export function RequestModal({ open, onClose, stationCount }) {
   }
 
   return createPortal(
-    <div className="fixed inset-0 z-[100] flex items-end justify-center bg-graphite-950/80 p-4 backdrop-blur-md sm:items-center">
+    <div className="fixed inset-0 z-[100] flex items-end justify-center bg-ink/30 p-4 backdrop-blur-md sm:items-center">
       <button
         type="button"
         className="absolute inset-0 cursor-default"
@@ -101,7 +101,7 @@ export function RequestModal({ open, onClose, stationCount }) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="request-title"
-        className="panel relative max-h-[92vh] w-full max-w-md overflow-y-auto border-white/[0.1] bg-graphite-850 p-5 shadow-lift sm:p-6"
+        className="panel relative max-h-[92vh] w-full max-w-md overflow-y-auto border-ink/[0.1] bg-graphite-850 p-5 shadow-lift sm:p-6"
       >
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-400/50 to-transparent" />
 
@@ -115,7 +115,7 @@ export function RequestModal({ open, onClose, stationCount }) {
           <button
             type="button"
             onClick={handleClose}
-            className="grid h-8 w-8 shrink-0 place-items-center rounded-lg border border-white/[0.07] text-steel-500 transition-colors hover:border-white/[0.14] hover:text-steel-200 disabled:opacity-40"
+            className="grid h-8 w-8 shrink-0 place-items-center rounded-lg border border-ink/[0.07] text-steel-500 transition-colors hover:border-ink/[0.14] hover:text-steel-200 disabled:opacity-40"
             aria-label="Закрыть"
             disabled={sending}
           >

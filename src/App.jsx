@@ -180,7 +180,7 @@ function Toast({ toast }) {
   const tone =
     toast.tone === 'success'
       ? 'border-success-500/25 bg-success-500/10 text-success-400'
-      : 'border-white/10 bg-white/[0.04] text-steel-300';
+      : 'border-ink/10 bg-ink/[0.04] text-steel-300';
 
   return createPortal(
     <div
@@ -190,7 +190,7 @@ function Toast({ toast }) {
     >
       <div
         key={toast.id}
-        className="animate-rise flex items-center gap-2.5 rounded-xl border border-white/10 bg-graphite-850/95 px-3.5 py-2.5 shadow-lift backdrop-blur-md"
+        className="animate-rise flex items-center gap-2.5 rounded-xl border border-ink/10 bg-graphite-850/95 px-3.5 py-2.5 shadow-lift backdrop-blur-md"
       >
         <span className={`grid h-6 w-6 shrink-0 place-items-center rounded-full border ${tone}`}>
           <Check className="h-3.5 w-3.5" strokeWidth={2.2} />

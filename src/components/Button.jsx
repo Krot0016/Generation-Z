@@ -5,13 +5,13 @@ const BASE =
 
 const VARIANTS = {
   primary:
-    'bg-amber-400 text-graphite-950 hover:bg-amber-300 shadow-[0_14px_36px_-22px_rgba(231,191,116,0.9)]',
+    'bg-amber-400 text-graphite-950 hover:bg-amber-300 shadow-[0_14px_36px_-22px_rgba(12,119,226,0.45)]',
   secondary:
-    'border border-white/10 bg-white/[0.03] text-steel-100 hover:border-white/20 hover:bg-white/[0.06]',
-  ghost: 'text-steel-300 hover:bg-white/[0.05] hover:text-steel-100',
+    'border border-ink/10 bg-ink/[0.03] text-steel-100 hover:border-ink/20 hover:bg-ink/[0.06]',
+  ghost: 'text-steel-300 hover:bg-ink/[0.05] hover:text-steel-100',
   outline:
     'border border-amber-400/30 bg-amber-400/[0.06] text-amber-200 hover:border-amber-400/50 hover:bg-amber-400/10',
-  product: 'bg-product-accent text-product-bg hover:bg-[#a7f3c0] shadow-[0_14px_30px_-18px_rgba(126,240,162,0.5)]',
+  product: 'bg-product-accent text-white hover:bg-[#3b9bf0] shadow-[0_14px_30px_-18px_rgba(12,119,226,0.45)]',
   'product-secondary':
     'border border-product-line bg-product-surface text-product-ink hover:border-product-strong hover:bg-product-soft',
 };

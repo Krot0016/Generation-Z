@@ -124,7 +124,7 @@ export function UploadScreen({ onImported, onManual }) {
                 }}
                 className="flex min-h-[280px] cursor-pointer flex-col items-center justify-center text-center outline-none"
               >
-                <div className="relative grid h-16 w-16 place-items-center rounded-2xl border border-white/[0.08] bg-white/[0.02] text-steel-300">
+                <div className="relative grid h-16 w-16 place-items-center rounded-2xl border border-ink/[0.08] bg-ink/[0.02] text-steel-300">
                   <FileSpreadsheet className="h-7 w-7" strokeWidth={1.4} />
                   <span className="absolute -bottom-2 -right-2 grid h-7 w-7 place-items-center rounded-lg border border-amber-400/25 bg-graphite-900 text-amber-300">
                     <UploadCloud className="h-3.5 w-3.5" strokeWidth={1.7} />
@@ -141,9 +141,9 @@ export function UploadScreen({ onImported, onManual }) {
                 </p>
 
                 <div className="mt-6 flex items-center gap-3">
-                  <span className="h-px w-8 bg-white/10" />
+                  <span className="h-px w-8 bg-ink/10" />
                   <span className="text-[10px] uppercase tracking-[0.18em] text-steel-600">или</span>
-                  <span className="h-px w-8 bg-white/10" />
+                  <span className="h-px w-8 bg-ink/10" />
                 </div>
 
                 <Button
@@ -183,7 +183,7 @@ export function UploadScreen({ onImported, onManual }) {
             {UPLOAD_FEATURES.map((feature, index) => (
               <div
                 key={feature.title}
-                className="rounded-xl border border-white/[0.05] bg-white/[0.012] px-3.5 py-3"
+                className="rounded-xl border border-ink/[0.05] bg-ink/[0.012] px-3.5 py-3"
               >
                 <div className="flex items-center gap-2">
                   <span className="mono text-[9px] text-amber-400/70">0{index + 1}</span>
@@ -198,7 +198,7 @@ export function UploadScreen({ onImported, onManual }) {
 
           <div className="panel-soft mt-6 flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-start gap-3">
-              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-white/[0.08] bg-white/[0.02] text-steel-400">
+              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-ink/[0.08] bg-ink/[0.02] text-steel-400">
                 <GitBranch className="h-4 w-4" strokeWidth={1.6} />
               </span>
               <div>
@@ -236,7 +236,7 @@ function AnalysisPanel({ fileName, step }) {
         <Loader2 className="h-6 w-6 animate-spin" strokeWidth={1.6} />
       </div>
 
-      <div className="mt-5 flex max-w-full items-center gap-2 rounded-lg border border-white/[0.07] bg-graphite-900/70 px-3 py-2">
+      <div className="mt-5 flex max-w-full items-center gap-2 rounded-lg border border-ink/[0.07] bg-graphite-900/70 px-3 py-2">
         <FileSpreadsheet className="h-4 w-4 shrink-0 text-steel-400" strokeWidth={1.6} />
         <span className="truncate text-xs text-steel-200">{fileName}</span>
         <span className="shrink-0 font-mono text-[9px] text-steel-600">4 строки</span>
@@ -247,7 +247,7 @@ function AnalysisPanel({ fileName, step }) {
           <span>{ANALYSIS_MESSAGES[step]}</span>
           <span className="mono text-steel-600">{step === 0 ? '1 / 2' : '2 / 2'}</span>
         </div>
-        <div className="mt-2 h-1 overflow-hidden rounded-full bg-white/[0.06]">
+        <div className="mt-2 h-1 overflow-hidden rounded-full bg-ink/[0.06]">
           <div
             className="h-full rounded-full bg-amber-400/80 transition-all duration-500"
             style={{ width: `${progress}%` }}
@@ -266,8 +266,8 @@ function AnalysisPanel({ fileName, step }) {
                 active
                   ? 'border-amber-400/20 bg-amber-400/[0.05] text-steel-100'
                   : done
-                    ? 'border-white/[0.06] bg-white/[0.02] text-steel-300'
-                    : 'border-white/[0.04] text-steel-600'
+                    ? 'border-ink/[0.06] bg-ink/[0.02] text-steel-300'
+                    : 'border-ink/[0.04] text-steel-600'
               }`}
             >
               {done ? (

@@ -101,10 +101,10 @@ export function BuilderScreen({
           </div>
 
           <div className="flex shrink-0 items-center gap-2">
-            <span className="rounded-lg border border-white/[0.07] bg-white/[0.02] px-3 py-2 font-mono text-[10px] text-steel-400">
+            <span className="rounded-lg border border-ink/[0.07] bg-ink/[0.02] px-3 py-2 font-mono text-[10px] text-steel-400">
               В цеху: <span className="text-steel-100">{added.length}</span>
             </span>
-            <span className="rounded-lg border border-white/[0.07] bg-white/[0.02] px-3 py-2 font-mono text-[10px] text-steel-400">
+            <span className="rounded-lg border border-ink/[0.07] bg-ink/[0.02] px-3 py-2 font-mono text-[10px] text-steel-400">
               В маршруте: <span className="text-amber-300">{routeStations.length}</span>
             </span>
           </div>
@@ -203,7 +203,7 @@ export function BuilderScreen({
 
         <section id="builder" className="mt-12 scroll-mt-24">
           <div className="panel overflow-hidden">
-            <div className="flex flex-col gap-5 border-b border-white/[0.06] p-5 sm:p-6 lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex flex-col gap-5 border-b border-ink/[0.06] p-5 sm:p-6 lg:flex-row lg:items-center lg:justify-between">
               <div>
                 <div className="eyebrow">Сборка цеха</div>
                 <h2 className="mt-2 text-xl font-medium tracking-[-0.02em] text-steel-100">
@@ -218,7 +218,7 @@ export function BuilderScreen({
                 </p>
               </div>
               <div className="flex shrink-0 flex-wrap items-center gap-2">
-                <span className="rounded-lg border border-white/[0.07] bg-white/[0.02] px-3 py-2 font-mono text-[10px] text-steel-400">
+                <span className="rounded-lg border border-ink/[0.07] bg-ink/[0.02] px-3 py-2 font-mono text-[10px] text-steel-400">
                   {pluralStations(added.length)} в цеху
                 </span>
                 <span className="rounded-lg border border-amber-400/15 bg-amber-400/[0.045] px-3 py-2 font-mono text-[10px] text-amber-200/80">
@@ -254,7 +254,7 @@ export function BuilderScreen({
                   ))}
                 </div>
               ) : (
-                <div className="mt-4 flex flex-col items-center justify-center rounded-xl border border-dashed border-white/10 bg-white/[0.01] px-5 py-9 text-center">
+                <div className="mt-4 flex flex-col items-center justify-center rounded-xl border border-dashed border-ink/10 bg-ink/[0.01] px-5 py-9 text-center">
                   <Plus className="h-5 w-5 text-steel-600" strokeWidth={1.5} />
                   <p className="mt-3 text-xs text-steel-400">
                     Пока пусто. Добавьте станки из каталога выше.
@@ -262,7 +262,7 @@ export function BuilderScreen({
                 </div>
               )}
 
-              <div className="my-7 h-px w-full bg-white/[0.06]" />
+              <div className="my-7 h-px w-full bg-ink/[0.06]" />
 
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div className="flex items-center gap-2">
@@ -295,7 +295,7 @@ export function BuilderScreen({
                     ))}
                   </div>
                 ) : (
-                  <div className="flex flex-col items-center justify-center rounded-xl border border-dashed border-white/10 bg-white/[0.01] px-5 py-10 text-center">
+                  <div className="flex flex-col items-center justify-center rounded-xl border border-dashed border-ink/10 bg-ink/[0.01] px-5 py-10 text-center">
                     <GitBranch className="h-5 w-5 text-steel-600" strokeWidth={1.5} />
                     <p className="mt-3 max-w-sm text-xs leading-relaxed text-steel-400">
                       Кликните по добавленным станкам в том порядке, в котором по ним движется
@@ -306,7 +306,7 @@ export function BuilderScreen({
               </div>
             </div>
 
-            <div className="flex flex-col gap-4 border-t border-white/[0.06] bg-graphite-900/40 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+            <div className="flex flex-col gap-4 border-t border-ink/[0.06] bg-graphite-900/40 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
               <div>
                 <p className="text-xs text-steel-300">
                   {generationCount
@@ -361,10 +361,10 @@ function FilterSelect({ label, value, options, onChange }) {
 
 function MachineCard({ machine, addedCount, onAdd }) {
   return (
-    <article className="panel group flex h-full flex-col p-5 transition-colors duration-200 hover:border-white/[0.12]">
+    <article className="panel group flex h-full flex-col p-5 transition-colors duration-200 hover:border-product-plateLineHover">
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-center gap-3">
-          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-white/[0.08] bg-white/[0.02] text-steel-300">
+          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-product-plateLine/80 bg-white/70 text-steel-300">
             <TypeIcon typeKey={machine.typeKey} className="h-4 w-4" />
           </span>
           <div>
@@ -374,7 +374,7 @@ function MachineCard({ machine, addedCount, onAdd }) {
             <div className="mono mt-0.5 text-[9px] text-steel-600">{machine.inventory}</div>
           </div>
         </div>
-        <span className="rounded-md border border-white/[0.08] bg-white/[0.02] px-2 py-1 font-mono text-[9px] text-steel-400">
+        <span className="rounded-md border border-product-plateLine/80 bg-white/70 px-2 py-1 font-mono text-[9px] text-steel-400">
           {machine.cnc ? 'ЧПУ' : 'Ручной'}
         </span>
       </div>
@@ -389,7 +389,7 @@ function MachineCard({ machine, addedCount, onAdd }) {
         {machine.specs.map((spec) => (
           <span
             key={spec}
-            className="rounded-md border border-white/[0.06] bg-white/[0.015] px-2 py-1 font-mono text-[9px] text-steel-500"
+            className="rounded-md border border-product-plateLine/70 bg-white/80 px-2 py-1 font-mono text-[9px] text-steel-500"
           >
             {spec}
           </span>
@@ -410,7 +410,7 @@ function MachineCard({ machine, addedCount, onAdd }) {
           )}
           {machine.sensorsLabel}
           {addedCount > 0 && (
-            <span className="ml-auto rounded-md border border-white/[0.07] bg-white/[0.02] px-1.5 py-0.5 font-mono text-[9px] text-steel-400">
+            <span className="ml-auto rounded-md border border-product-plateLine/80 bg-white/70 px-1.5 py-0.5 font-mono text-[9px] text-steel-400">
               в цеху: {addedCount}
             </span>
           )}
@@ -429,10 +429,8 @@ function AddedMachineCard({ station, inRoute, onAppend, onRemove }) {
   return (
     <div
       className={cn(
-        'group flex items-stretch overflow-hidden rounded-xl border bg-white/[0.015] transition-colors',
-        inRoute
-          ? 'border-success-500/25 bg-success-500/[0.035]'
-          : 'border-white/[0.07] hover:border-white/[0.14]',
+        'group flex items-stretch overflow-hidden rounded-xl border border-product-sky/60 bg-product-sky/65 text-steel-100 transition-colors',
+        !inRoute && 'hover:bg-product-sky/75',
       )}
     >
       <button
@@ -446,25 +444,25 @@ function AddedMachineCard({ station, inRoute, onAppend, onRemove }) {
             : `Добавить ${station.model} #${station.number} в маршрут`
         }
       >
-        <span className="mono grid h-6 w-6 shrink-0 place-items-center rounded-md border border-white/[0.08] bg-graphite-900/80 text-[9px] text-steel-400">
+        <span className="mono grid h-6 w-6 shrink-0 place-items-center rounded-md border border-product-sky/70 bg-white/50 text-[9px] text-steel-100">
           {station.number}
         </span>
         <span className="min-w-0 flex-1">
-          <span className="block truncate text-xs font-medium text-steel-200">
+          <span className="block truncate text-xs font-medium text-steel-100">
             {station.model}
           </span>
-          <span className="mt-0.5 block text-[10px] text-steel-500">
+          <span className="mt-0.5 block text-[10px] text-steel-300">
             {station.typeLabel} · {station.year}
           </span>
         </span>
         {inRoute ? (
-          <span className="inline-flex shrink-0 items-center gap-1 text-[9px] uppercase tracking-[0.12em] text-success-400">
+          <span className="inline-flex shrink-0 items-center gap-1 text-[9px] uppercase tracking-[0.12em] text-steel-300">
             <Check className="h-3 w-3" strokeWidth={2.2} />
             в цепочке
           </span>
         ) : (
           <ArrowRight
-            className="h-3.5 w-3.5 shrink-0 text-steel-600 transition-colors group-hover:text-amber-300"
+            className="h-3.5 w-3.5 shrink-0 text-steel-400 transition-colors group-hover:text-steel-100"
             strokeWidth={1.7}
           />
         )}
@@ -472,7 +470,7 @@ function AddedMachineCard({ station, inRoute, onAppend, onRemove }) {
       <button
         type="button"
         onClick={onRemove}
-        className="grid w-9 shrink-0 place-items-center border-l border-white/[0.06] text-steel-600 transition-colors hover:bg-danger-500/[0.06] hover:text-danger-300"
+        className="grid w-9 shrink-0 place-items-center border-l border-product-sky/50 text-steel-400 transition-colors hover:bg-white/25 hover:text-danger-500"
         aria-label={`Удалить ${station.model} #${station.number} из цеха`}
         title="Удалить станок"
       >
@@ -484,15 +482,15 @@ function AddedMachineCard({ station, inRoute, onAppend, onRemove }) {
 
 function RouteStage({ station, index, onRemove }) {
   return (
-    <div className="relative flex w-full shrink-0 flex-col rounded-xl border border-white/[0.08] bg-graphite-900/70 p-3 lg:w-[178px]">
+    <div className="relative flex w-full shrink-0 flex-col rounded-xl border border-product-sky/60 bg-product-sky/65 p-3 text-steel-100 lg:w-[178px]">
       <div className="flex items-center justify-between gap-2">
-        <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-amber-300/85">
+        <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-steel-400">
           Этап {index + 1}
         </span>
         <button
           type="button"
           onClick={onRemove}
-          className="grid h-5 w-5 place-items-center rounded text-steel-600 transition-colors hover:bg-danger-500/[0.08] hover:text-danger-300"
+          className="grid h-5 w-5 place-items-center rounded text-steel-400 transition-colors hover:bg-white/25 hover:text-danger-500"
           aria-label={`Убрать этап ${index + 1} из маршрута`}
           title="Убрать из маршрута"
         >
@@ -500,11 +498,11 @@ function RouteStage({ station, index, onRemove }) {
         </button>
       </div>
       <div className="mt-2 truncate text-sm font-medium text-steel-100">{station.model}</div>
-      <div className="mt-0.5 text-[10px] text-steel-500">
+      <div className="mt-0.5 text-[10px] text-steel-300">
         #{station.number} · {station.typeLabel}
       </div>
-      <div className="mt-2.5 h-px w-full bg-white/[0.06]" />
-      <div className="mt-2 flex items-center gap-1.5 text-[9px] text-steel-600">
+      <div className="mt-2.5 h-px w-full bg-product-sky/45" />
+      <div className="mt-2 flex items-center gap-1.5 text-[9px] text-steel-400">
         {station.requiresSensors ? (
           <Radio className="h-2.5 w-2.5" strokeWidth={1.8} />
         ) : (

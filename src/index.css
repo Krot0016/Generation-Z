@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    color-scheme: dark;
+    color-scheme: light;
   }
 
   html {
@@ -14,19 +14,21 @@
   body {
     @apply bg-graphite-950 text-steel-100 antialiased;
     background-image:
-      radial-gradient(1100px 600px at 12% -10%, rgba(216, 166, 78, 0.065), transparent 60%),
-      radial-gradient(900px 520px at 92% 0%, rgba(111, 146, 173, 0.05), transparent 60%);
+      radial-gradient(1100px 560px at 8% -12%, rgba(12, 119, 226, 0.055), transparent 62%),
+      radial-gradient(900px 520px at 96% 0%, rgba(111, 51, 193, 0.028), transparent 58%),
+      radial-gradient(760px 420px at 50% 112%, rgba(13, 148, 136, 0.028), transparent 62%),
+      linear-gradient(180deg, #ffffff 0%, #fafdff 55%, #ffffff 100%);
     background-attachment: fixed;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
 
   ::selection {
-    background: rgba(231, 191, 116, 0.22);
-    color: #e9edf1;
+    background: #cfe4ff;
+    color: #0b1b33;
   }
 
   :focus-visible {
-    outline: 2px solid #e7bf74;
+    outline: 2px solid #0c77e2;
     outline-offset: 2px;
   }
 
@@ -38,16 +40,16 @@
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background: rgba(142, 154, 166, 0.24);
+    background: rgba(11, 27, 51, 0.18);
     border-radius: 99px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(142, 154, 166, 0.38);
+    background: rgba(11, 27, 51, 0.28);
   }
 
   option {
-    background-color: #0c0f12;
-    color: #e9edf1;
+    background-color: #ffffff;
+    color: #0b1b33;
   }
 }
 
@@ -57,11 +59,11 @@
   }
 
   .panel {
-    @apply rounded-2xl border border-white/[0.07] bg-graphite-850/75 shadow-panel;
+    @apply rounded-2xl border border-product-plateLine bg-gradient-to-b from-product-plateFrom to-product-plateTo shadow-plate;
   }
 
   .panel-soft {
-    @apply rounded-2xl border border-white/[0.06] bg-white/[0.015];
+    @apply rounded-2xl border border-product-plateLine/70 bg-gradient-to-b from-white to-product-plateTo/60;
   }
 
   .eyebrow {
@@ -73,24 +75,24 @@
   }
 
   .field {
-    @apply w-full rounded-xl border border-white/10 bg-graphite-900/80 px-3.5 py-2.5 text-sm text-steel-100 placeholder:text-steel-600 transition focus:border-amber-400/50 focus:outline-none focus:ring-2 focus:ring-amber-400/10;
+    @apply w-full rounded-xl border border-ink/10 bg-graphite-900/80 px-3.5 py-2.5 text-sm text-steel-100 placeholder:text-steel-600 transition focus:border-amber-400/50 focus:outline-none focus:ring-2 focus:ring-amber-400/10;
   }
 
   .select-field {
-    @apply w-full appearance-none rounded-xl border border-white/10 bg-graphite-900/80 px-3.5 py-2.5 pr-9 text-sm text-steel-100 transition focus:border-amber-400/50 focus:outline-none focus:ring-2 focus:ring-amber-400/10;
+    @apply w-full appearance-none rounded-xl border border-ink/10 bg-graphite-900/80 px-3.5 py-2.5 pr-9 text-sm text-steel-100 transition focus:border-amber-400/50 focus:outline-none focus:ring-2 focus:ring-amber-400/10;
   }
 
   .dropzone {
-    @apply rounded-2xl border-2 border-dashed border-white/[0.12] bg-graphite-850/55 shadow-panel transition-colors duration-200;
+    @apply rounded-2xl border-2 border-dashed border-product-plateLine bg-gradient-to-b from-product-plateFrom to-product-plateTo shadow-plate transition-colors duration-200;
   }
 
   .dropzone:hover {
-    border-color: rgba(255, 255, 255, 0.2);
+    border-color: #a9c9ea;
   }
 
   .dropzone.is-drag {
-    border-color: rgba(231, 191, 116, 0.5);
-    background-color: rgba(231, 191, 116, 0.04);
+    border-color: rgba(12, 119, 226, 0.5);
+    background-color: rgba(12, 119, 226, 0.04);
   }
 
   .mono {
@@ -112,8 +114,8 @@
   z-index: 0;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.024) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.024) 1px, transparent 1px);
+    linear-gradient(rgba(12, 119, 226, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(12, 119, 226, 0.045) 1px, transparent 1px);
   background-size: 64px 64px;
   mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 0%, transparent 78%);
   -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 0%, transparent 78%);
@@ -137,28 +139,14 @@
 
 .chain-line-h {
   height: 1px;
-  background-image: linear-gradient(90deg, rgba(231, 191, 116, 0.55) 50%, transparent 50%);
+  background-image: linear-gradient(90deg, rgba(12, 119, 226, 0.55) 50%, transparent 50%);
   background-size: 8px 1px;
   animation: chain-flow-h 1.3s linear infinite;
 }
 
 .chain-line-v {
   width: 1px;
-  background-image: linear-gradient(180deg, rgba(231, 191, 116, 0.55) 50%, transparent 50%);
-  background-size: 1px 8px;
-  animation: chain-flow-v 1.3s linear infinite;
-}
-
-.chain-line-h--green {
-  height: 1px;
-  background-image: linear-gradient(90deg, rgba(126, 240, 162, 0.55) 50%, transparent 50%);
-  background-size: 8px 1px;
-  animation: chain-flow-h 1.3s linear infinite;
-}
-
-.chain-line-v--green {
-  width: 1px;
-  background-image: linear-gradient(180deg, rgba(126, 240, 162, 0.55) 50%, transparent 50%);
+  background-image: linear-gradient(180deg, rgba(12, 119, 226, 0.55) 50%, transparent 50%);
   background-size: 1px 8px;
   animation: chain-flow-v 1.3s linear infinite;
 }
@@ -185,8 +173,8 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(231, 191, 116, 0.75), transparent);
-  box-shadow: 0 0 18px rgba(231, 191, 116, 0.25);
+  background: linear-gradient(90deg, transparent, rgba(12, 119, 226, 0.75), transparent);
+  box-shadow: 0 0 18px rgba(12, 119, 226, 0.25);
   animation: scan 1.8s ease-in-out infinite;
 }
 
@@ -212,7 +200,7 @@
 
 .thin-scroll {
   scrollbar-width: thin;
-  scrollbar-color: rgba(142, 154, 166, 0.25) transparent;
+  scrollbar-color: rgba(11, 27, 51, 0.18) transparent;
 }
 
 .thin-scroll::-webkit-scrollbar {
@@ -220,14 +208,14 @@
 }
 
 .thin-scroll::-webkit-scrollbar-thumb {
-  background: rgba(142, 154, 166, 0.25);
+  background: rgba(11, 27, 51, 0.18);
   border-radius: 99px;
 }
 
 .grid-fade {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    linear-gradient(rgba(12, 119, 226, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(12, 119, 226, 0.035) 1px, transparent 1px);
   background-size: 32px 32px;
   mask-image: linear-gradient(180deg, #000 0%, transparent 100%);
   -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 100%);

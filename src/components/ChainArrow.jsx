@@ -1,9 +1,7 @@
 import { ChevronDown, ChevronRight } from 'lucide-react';
 import { cn } from '../lib/utils';
 
-export function ChainArrow({ className, tone = 'amber' }) {
-  const green = tone === 'green';
-
+export function ChainArrow({ className }) {
   return (
     <div
       className={cn(
@@ -12,20 +10,10 @@ export function ChainArrow({ className, tone = 'amber' }) {
       )}
       aria-hidden="true"
     >
-      <span
-        className={cn('h-8 lg:hidden', green ? 'chain-line-v chain-line-v--green' : 'chain-line-v')}
-      />
-      <ChevronDown
-        className={cn('h-4 w-4 lg:hidden', green ? 'text-product-accent/70' : 'text-amber-400/60')}
-        strokeWidth={1.6}
-      />
-      <span
-        className={cn('hidden w-8 lg:block', green ? 'chain-line-h chain-line-h--green' : 'chain-line-h')}
-      />
-      <ChevronRight
-        className={cn('hidden h-4 w-4 lg:block', green ? 'text-product-accent/70' : 'text-amber-400/70')}
-        strokeWidth={1.6}
-      />
+      <span className="chain-line-v h-8 lg:hidden" />
+      <ChevronDown className="h-4 w-4 text-amber-400/60 lg:hidden" strokeWidth={1.6} />
+      <span className="chain-line-h hidden w-8 lg:block" />
+      <ChevronRight className="hidden h-4 w-4 text-amber-400/70 lg:block" strokeWidth={1.6} />
     </div>
   );
 }

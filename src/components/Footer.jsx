@@ -9,7 +9,7 @@ const LINKS = [
 
 export function Footer({ landing, onHome, onOpenDemo }) {
   return (
-    <footer className="relative z-10 mt-auto border-t border-white/[0.06] bg-graphite-950/50">
+    <footer className="relative z-10 mt-auto border-t border-ink/[0.06] bg-graphite-950/50">
       <div className="container-page py-10">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-sm">
@@ -51,7 +51,7 @@ export function Footer({ landing, onHome, onOpenDemo }) {
           )}
         </div>
 
-        <div className="mt-8 flex flex-col gap-2 border-t border-white/[0.06] pt-5 text-[10px] leading-relaxed text-steel-600 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-8 flex flex-col gap-2 border-t border-ink/[0.06] pt-5 text-[10px] leading-relaxed text-steel-600 sm:flex-row sm:items-center sm:justify-between">
           <span>© 2026 TwinBoost. Демонстрационный прототип интерфейса.</span>
           <span>Все предприятия и показатели вымышлены · данные не покидают браузер</span>
         </div>
